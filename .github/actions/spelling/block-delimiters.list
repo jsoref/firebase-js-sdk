@@ -1,0 +1,31 @@
+# Public Keys
+-----BEGIN PUBLIC KEY-----
+-----END PUBLIC KEY-----
+
+# RSA Private Key
+-----BEGIN RSA PRIVATE KEY-----
+-----END RSA PRIVATE KEY-----
+
+# GPG Public Key
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+-----END PGP PUBLIC KEY BLOCK-----
+
+# Certificates
+-----BEGIN CERTIFICATE-----
+-----END CERTIFICATE-----
+
+# merge strings
+_mergeStrings(
+);
+
+# vapid key
+DEFAULT_VAPID_KEY =
+;
+
+# packages/installations/src/helpers/generate-fid.test.ts
+EXPECTED_FIDS = [
+];
+
+# integration/messaging/test/utils/sendMessage.js
+FCM_KEY =
+;
