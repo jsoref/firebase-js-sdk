@@ -379,7 +379,7 @@ export class DataSnapshot {
    * Enumerates the top-level children in the `IteratedDataSnapshot`.
    *
    * Because of the way JavaScript objects work, the ordering of data in the
-   * JavaScript object returned by `val()` is not guaranteed to match the
+   * JavaScript object returned by `val()` is neither guaranteed to match the
    * ordering on the server nor the ordering of `onChildAdded()` events. That is
    * where `forEach()` comes in handy. It guarantees the children of a
    * `DataSnapshot` will be iterated in their query order.
