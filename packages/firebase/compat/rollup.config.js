@@ -19,7 +19,7 @@ import { resolve } from 'path';
 import resolveModule from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import sourcemaps from 'rollup-plugin-sourcemaps';
-import rollupTypescriptPlugin from 'rollup-plugin-typescript2';
+import rollupTypeScriptPlugin from 'rollup-plugin-typescript2';
 import typescript from 'typescript';
 import { uglify } from 'rollup-plugin-uglify';
 import { terser } from 'rollup-plugin-terser';
@@ -78,11 +78,11 @@ function createUmdOutputConfig(output) {
 
 const plugins = [sourcemaps(), resolveModule(), json(), commonjs()];
 
-const typescriptPlugin = rollupTypescriptPlugin({
+const typescriptPlugin = rollupTypeScriptPlugin({
   typescript
 });
 
-const typescriptPluginCDN = rollupTypescriptPlugin({
+const typescriptPluginCDN = rollupTypeScriptPlugin({
   typescript,
   tsconfigOverride: {
     compilerOptions: {
@@ -309,7 +309,7 @@ const completeBuilds = [
       resolveModule({
         exportConditions: ['lite']
       }),
-      rollupTypescriptPlugin({
+      rollupTypeScriptPlugin({
         typescript,
         tsconfigOverride: {
           compilerOptions: {

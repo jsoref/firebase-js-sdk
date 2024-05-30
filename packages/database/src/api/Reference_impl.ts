@@ -379,7 +379,7 @@ export class DataSnapshot {
    * Enumerates the top-level children in the `IteratedDataSnapshot`.
    *
    * Because of the way JavaScript objects work, the ordering of data in the
-   * JavaScript object returned by `val()` is not guaranteed to match the
+   * JavaScript object returned by `val()` is neither guaranteed to match the
    * ordering on the server nor the ordering of `onChildAdded()` events. That is
    * where `forEach()` comes in handy. It guarantees the children of a
    * `DataSnapshot` will be iterated in their query order.
@@ -609,7 +609,7 @@ export function push(
   // then() and catch() methods and is used as the return value of push(). The
   // second remains a regular Reference and is used as the fulfilled value of
   // the first ThennableReference.
-  const thennablePushRef: Partial<ThenableReferenceImpl> = child(
+  const thenablePushRef: Partial<ThenableReferenceImpl> = child(
     parent,
     name
   ) as ReferenceImpl;
@@ -622,9 +622,9 @@ export function push(
     promise = Promise.resolve(pushRef);
   }
 
-  thennablePushRef.then = promise.then.bind(promise);
-  thennablePushRef.catch = promise.then.bind(promise, undefined);
-  return thennablePushRef as ThenableReferenceImpl;
+  thenablePushRef.then = promise.then.bind(promise);
+  thenablePushRef.catch = promise.then.bind(promise, undefined);
+  return thenablePushRef as ThenableReferenceImpl;
 }
 
 /**

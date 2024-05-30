@@ -21,7 +21,7 @@ import json from '@rollup/plugin-json';
 import pkg from './package.json';
 import { resolve } from 'path';
 import resolveModule from '@rollup/plugin-node-resolve';
-import rollupTypescriptPlugin from 'rollup-plugin-typescript2';
+import rollupTypeScriptPlugin from 'rollup-plugin-typescript2';
 import sourcemaps from 'rollup-plugin-sourcemaps';
 import { terser } from 'rollup-plugin-terser';
 import typescript from 'typescript';
@@ -30,11 +30,11 @@ import { emitModulePackageFile } from '../../scripts/build/rollup_emit_module_pa
 const external = Object.keys(pkg.dependencies || {});
 const plugins = [sourcemaps(), resolveModule(), json(), commonjs()];
 
-const typescriptPlugin = rollupTypescriptPlugin({
+const typescriptPlugin = rollupTypeScriptPlugin({
   typescript
 });
 
-const typescriptPluginCDN = rollupTypescriptPlugin({
+const typescriptPluginCDN = rollupTypeScriptPlugin({
   typescript,
   tsconfigOverride: {
     compilerOptions: {
